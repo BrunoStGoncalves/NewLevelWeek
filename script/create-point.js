@@ -63,6 +63,8 @@ for (const item of itemsToCollet) {
     item.addEventListener("click", handleSelectItem)
 }
 
+let selectedItems = [1, 2, 3, 4, 5, 6]
+
 function handleSelectItem(event) {
     const itemLi = event.target
 
@@ -70,4 +72,22 @@ function handleSelectItem(event) {
     itemLi.classList.toggle("selected")
 
     const itemId = itemLi.dataset.id
+
+
+    //vereficar se existe items selecionados, se sim
+    //pegar os items selecionados 
+
+    const alreadySelected = selectedItems.findIndex(item => {
+        const itemFound = item == itemId //isso será true ou false 
+        return itemFound
+    })
+
+    //se já estiver selecionado, tirar da seleção
+    if (alreadySelected) {
+
+    }
+
+    //se não estover selecionado, adicionar à seleção
+
+    //atualizar o campo escondido com os items selecionados 
 }
